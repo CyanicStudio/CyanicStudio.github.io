@@ -1027,4 +1027,4 @@ function preloadImages(array) {
     }
 }
 
-preloadImages(["./media/Alanine.png", "./media/Arginine.png", "./media/Asparagine.png", "./media/Aspartic-acid.png", "./media/Cysteine.png", "./media/Glutamic-acid.png", "./media/Glutamine.png", "./media/Glycine.png", "./media/Histidine.png", "./media/Isoleucine.png", "./media/Leucine.png", "./media/Lysine.png", "./media/Methionine.png", "./media/Phenylalanine.png", "./media/Proline.png", "./media/Serine.png", "./media/Threonine.png", "./media/Tryptophan.png", "./media/Tyrosine.png", "./media/Valine.png"]);
+preloadImages(["./media/meat640.png", "./media/Alanine.png", "./media/Arginine.png", "./media/Asparagine.png", "./media/Aspartic-acid.png", "./media/Cysteine.png", "./media/Glutamic-acid.png", "./media/Glutamine.png", "./media/Glycine.png", "./media/Histidine.png", "./media/Isoleucine.png", "./media/Leucine.png", "./media/Lysine.png", "./media/Methionine.png", "./media/Phenylalanine.png", "./media/Proline.png", "./media/Serine.png", "./media/Threonine.png", "./media/Tryptophan.png", "./media/Tyrosine.png", "./media/Valine.png"]);
