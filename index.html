@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <meta name="author" content="Cody Nhan Pham">
+    <title>20 Amino Acids Quiz</title>
+    <link rel="icon" href="./.media/meat640.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&display=swap" rel="stylesheet">
+
+
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./aaData.js"></script>
+    <script src="./script.js"></script>
+
+    
+</head>
+
+
+<body id="page-body">
+    <!--Preloading Screen-->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+     
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+     
+    </div>
+
+
+    <!--Setting Button-->
+    <div class="setting-button">
+        <img id="setting-img" src="./.media/setting-image.png" onclick="openSetting()" draggable="false"/>
+    </div>
+
+    <!--Setting Menu-->
+    <div class="screen-overlay" id="screen-overlay" onclick="closeSetting()"></div>    <!--Overlay QnA Content-->
+        <!--Actual menu-->
+    <div class="setting-menu-backdrop" id="setting-menu-backdrop">
+        <div class="setting-menu">
+            <div class="setting-header">
+                <span id="setting-h1">Settings</span>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Toggle Fullscreen<br><span id="fullscreen-note">For the best experience, fullscreen mode is <i>highly</i> recommended!</span></span>
+                <input type="checkbox" id="fullscreen-option" onclick="toggleFullScreen()"/>
+                <label for="fullscreen-option" class="toggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Molecular Structure</span>
+                <input type="checkbox" checked id="structure-toggle" onclick="toggleStructure()"/>
+                <label for="structure-toggle" class="toggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Amino Acids' Fullname</span>
+                <input type="checkbox" checked id="fullname-toggle" onclick="toggleFullname()"/>
+                <label for="fullname-toggle" class="toggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Three-letter Code</span>
+                <input type="checkbox" checked id="threeLetter-toggle" onclick="toggle3Letter()"/>
+                <label for="threeLetter-toggle" class="toggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">One-letter Code</span>
+                <input type="checkbox" checked id="oneLetter-toggle" onclick="toggle1Letter()"/>
+                <label for="oneLetter-toggle" class="toggle">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Answer Feedback<br><span class="coming-soon"><i>Coming Soon!</i></span></span>
+                <input type="checkbox" id="answer-feedback"/>
+                <label for="" class="toggle" style="opacity: 0.25;">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span class="setting-p-text">Dark Mode<br><span class="coming-soon"><i>Coming Soon!</i></span></span>
+                <input type="checkbox" id="dark-mode"/>
+                <label for="" class="toggle" style="opacity: 0.25;">
+                    <div class="slider"></div>
+                </label>
+            </div>
+
+            <div class="setting-content">
+                <span id="tip"><i>Tip: Click the two-way arrow to swap between question and answer.</i></span>
+            </div>
+
+            <div class="close-setting" onclick="closeSetting()">
+                <span id="close-setting-text">Close</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--Central main QnA Area-->
+    <div class="viewport-center">   <!--Fixed the position of the main area at screen's center-->
+
+        <div class="main-back-drop" id="main-back-drop">
+            <div class="QnA-containter">
+                <!--QUESTION-->
+                <div class="question-container">
+                    <span id="question-text" style="text-align: center"></span>
+                    <img id="question-img" src="" draggable="false">
+
+                </div>
+
+                <!--SWAPPER-->
+                <div class="swapper" id="swapper-button">
+                    <img id="swapper-img" src="./.media/swapper-icon.png" draggable="false" onclick="rotate(this)"/>
+                </div>
+
+
+                <!--ANSWERS-->
+                <div class="answer-group">
+                    <div class="answer-group-padding-1"></div>
+                    <div class="answer-container-1">
+                        <div class="answer-select-box" id="answer-select-box-1" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+                        <div class="answer-select-box" id="answer-select-box-2" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+                        <div class="answer-select-box" id="answer-select-box-3" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+
+                    </div>
+
+                    <div class="answer-container-2">
+                        <div class="answer-select-box" id="answer-select-box-4" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+                        <div class="answer-select-box" id="answer-select-box-5" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+                        <div class="answer-select-box" id="answer-select-box-6" onmouseover="hoverOn(this.id)" onmouseleave="Released(this.id)" onmousedown="Active(this.id)" onmouseup="checkAnswer(this.id,correctAnswer_slot)">
+                            <span class="answer-text"></span>
+                            <img src="" class="answer-select-box-img">
+                        </div>
+
+                    </div>
+                    <div class="answer-group-padding-2"></div>
+
+
+                </div>
+            </div>
+
+
+        <!--End of back drop-->
+        </div>
+    
+    <!--End of Ques-Ans Box-->
+    </div>
+
+    
+    <!--High Streak Display a.k.a Point Counter-->
+
+    <!--Potentially a Feedback Popup to show right answer idk I'm just too lazy-->
+
+</body>
+
+</html>
