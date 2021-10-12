@@ -247,6 +247,22 @@ body {
     line-height: 110%;
 }
 
+#reportbugs {
+    flex-shrink: 0;
+    text-align: right;
+    margin: 5px;
+    font-size: calc(6px + 0.35vw);
+    display: inline;
+    opacity: 0.64;
+    color: red;
+    transition: 0.1s;
+}
+
+#reportbugs:hover {
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
 #close-setting-text {
     text-align: center;
     margin: 15px;

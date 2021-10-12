@@ -46,7 +46,7 @@ function rotate(image) {
     };
     window.setTimeout(function(){
         rollCounter = 0;
-    },2500);
+    },3500);
     
 
     //  Actual useful function!!
