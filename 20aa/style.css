@@ -254,12 +254,32 @@ body {
     font-size: calc(6px + 0.35vw);
     display: inline;
     opacity: 0.64;
+    filter: saturate(0.5);
     color: red;
     transition: 0.1s;
 }
 
+#pagesource {
+    flex-shrink: 0;
+    text-align: right;
+    margin: 5px;
+    font-size: calc(6px + 0.35vw);
+    display: inline;
+    opacity: 0.64;
+    filter: saturate(0.5);
+    color: rgb(125, 4, 180);
+    transition: 0.1s;
+}
+
 #reportbugs:hover {
-    opacity: 0.8;
+    opacity: 0.75;
+    filter: saturate(1);
+    transition: 0.1s;
+}
+
+#pagesource:hover {
+    opacity: 0.75;
+    filter: saturate(1);
     transition: 0.1s;
 }
 
