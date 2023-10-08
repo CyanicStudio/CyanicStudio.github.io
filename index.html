@@ -43,376 +43,64 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <style>
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    background-color: #FCF8E8;
-    font-family: 'Comfortaa', cursive;
-  }
-  h1 {
-    font-size: 32px;
-    font-weight: 700;
-    text-align: center;
-    color: #0d0d0d;
-  }
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 13px auto;
-    padding: 0;
-    color: #0d0d0d;
-  }
-  .copyright {
-    font-size: 14px;
-    line-height: 130%;
-    color: #0d0d0d;
-    text-align: center;
-    margin-top: 5px auto;
+  <script src="js/three.js_0.157.0_three.min.js"></script>
 
-
-  }
-
-  .column-left a {
-    transition: 0.2s;
-  }
-  .column-left a :hover {
-    transform: scale(1.07);
-    transition: 0.2s;
-  }
-
-  #link-box {
-    transition: 0.2s;
-  }
-  #link-box :hover {
-    border-radius: 25px;
-    transform: scale(1.02);
-    transition: 0.2s;
-  }
-
-  .spacer-20px {
-    height: 20px;
-    margin: 0;
-    padding: 0;
-  }
-  .spacer-10px {
-    height: 10px;
-    margin: 0;
-    padding: 0;
-  }
-  .spacer-5px {
-    height: 5px;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Create two equal columns that floats next to each other */
-  .column-left {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    text-align: center;
-    height: 69px;
-  }
-
-  .column-right {
-    float: left;
-    width: 80%;
-    padding: 10px;
-    text-align: center;
-    height: 69px;
-    border-radius: 15px;
-    transition: 0.2s;
-  }
-
-  img {
-    display: block;
-    justify-content: center;
-    width:auto;
-    height: 49px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: 0.2s;
-  }
-
-  .row {
-    width: 69%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    margin: 0 auto;
-    width: 70%;
-  }
-
-  .back-drop {
-    background-color: #D4E2D4;
-    height: fit-content;
-    width: 69vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 25px;
-    transition: 0.5s;
-  }
-
-
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .column-left {
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding: 5px;
-      text-align: center;
-      height: 47px;
-    }
-    .column-right {
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding: 5px;
-      text-align: center;
-      height: 47px;
-    }
-    img {
-    display: block;
-    justify-content: center;
-    width: auto;
-    height: 43px;
-    margin-left: auto;
-    margin-right: auto;
-    }
-    h1 {
-      font-size: 28px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 19px;
-      margin: 9px auto;
-      padding: 0;
-      }
-    .copyright {
-      font-size: 11px;
-    }
-
-  }
-
-  @media screen and (max-width: 420px) {
-    .column-left {
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    text-align: center;
-    height: 39px;
-    }
-    .column-right {
-      width: 100%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding: 5px;
-      text-align: center;
-      height: 39px;
-    }
-    img {
-    display: block;
-    justify-content: center;
-    width: auto;
-    height: 36px;
-    margin-left: auto;
-    margin-right: auto;
-    }
-    h1 {
-      font-size: 26px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 16px;
-      margin: 7px auto;
-      padding: 0;
-    }
-    .copyright {
-      font-size: 11px;
-    }
-    .back-drop {
-      width: 80vw;
-    }
-
-  }
-  @media screen and (max-width: 275px) {
-    .column-left {
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    padding: 3px;
-    text-align: center;
-    height: 32px;
-    }
-    .column-right {
-      display: none;
-    }
-    #link-box {
-      display: none;
-    }
-    img {
-    display: block;
-    justify-content: center;
-    width: auto;
-    height: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    }
-    h1 {
-      font-size: 9vw;
-      text-align: center;
-    }
-    .copyright {
-      font-size: 4vw;
-    }
-    .back-drop {
-      width: 80vw;
-    }
-
-  }
-  </style>
-
+  <script defer src="js/script.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
-  <div class="spacer-10px"></div>
-  <h1>@codynhanpham</h1>
+  
+  <div class="main">
+    <div class="content">
+      <div class="title">
+        <h1>@codynhanpham</h1>
+        <span id="description"><i>a sciency mind, an artsy soul</i></span>
+      </div>
 
-  <div class="back-drop">
-    <div class="spacer-20px"></div>
-    <!--YouTube-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://youtube.com/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/youtube128.png">
+      <div class="links">
+        <!-- YouTube GitHub LinkedIn Twitter Facebook 20 Amino Acids -->
+        <a tabindex="1" href="https://www.youtube.com/codynhanpham" target="_blank" rel="noopener noreferrer" id="youtube">
+          <img src="media/youtube128.png" alt="YouTube">
+          <span class="link-text">YouTube</span>
+        </a>
+
+        <a tabindex="2" href="https://github.com/codynhanpham" target="_blank" rel="noopener noreferrer" id="github">
+          <img src="media/github128.png" alt="GitHub">
+          <span class="link-text">GitHub</span>
+        </a>
+
+        <a tabindex="3" href="https://www.linkedin.com/in/codynhanpham/" target="_blank" rel="noopener noreferrer" id="linkedin">
+          <img src="media/linkedin128.png" alt="LinkedIn">
+          <span class="link-text">LinkedIn</span>
+        </a>
+
+        <a tabindex="4" href="https://twitter.com/codynhanpham" target="_blank" rel="noopener noreferrer" id="twitter">
+          <img src="media/twitter128.png" alt="Twitter">
+          <span class="link-text">Twitter</span>
+        </a>
+
+        <a tabindex="5" href="https://www.facebook.com/codynhanpham" target="_blank" rel="noopener noreferrer" id="facebook">
+          <img src="media/facebook128.png" alt="Facebook">
+          <span class="link-text">Facebook</span>
+        </a>
+
+        <a tabindex="6" href="/20aa" target="_blank" rel="noopener noreferrer" id="amino">
+          <img src="media/meat128.png" alt="amino">
+          <span class="link-text">20 Amino Acids?</span>
         </a>
       </div>
-      <a href="https://youtube.com/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>YouTube</h2>
-        </div>
-      </a>
+
     </div>
     
-    <!--LinkedIn-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://linkedin.com/in/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/linkedin128.png">
-        </a>
-      </div>
-      <a href="https://linkedin.com/in/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>LinkedIn</h2>
-        </div>
-      </a>
-    </div>
-
-    <!--Instagram-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://instagram.com/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/instagram128.png">
-        </a>
-      </div>
-      <a href="https://instagram.com/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>Instagram</h2>
-        </div>
-      </a>
-    </div>
-
-    <!--Facebook-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://facebook.com/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/facebook128.png">
-        </a>
-      </div>
-      <a href="https://facebook.com/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>Facebook</h2>
-        </div>
-      </a>
-    </div>
-
-    <!--Twitter-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://twitter.com/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/twitter128.png">
-        </a>
-      </div>
-      <a href="https://twitter.com/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>Twitter</h2>
-        </div>
-      </a>
-    </div>
-
-    <!--SoundCloud-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://soundcloud.com/codynhanpham" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/soundcloud128.png">
-        </a>
-      </div>
-      <a href="https://soundcloud.com/codynhanpham" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>SoundCloud</h2>
-        </div>
-      </a>
-    </div>
-    
-    <!--Website-->
-    <div class="row">
-      <div class="column-left">
-        <a href="https://codynhanpham.com/20aa/" style="display: block; margin: 0 auto; height: fit-content; width: fit-content;" target="_blank" rel="noopener noreferrer">
-          <img src="./media/meat128.png">
-        </a>
-      </div>
-      <a href="https://codynhanpham.com/20aa/" style="display: block;" id="link-box" target="_blank" rel="noopener noreferrer">
-        <div class="column-right" style="background-color:#ecb592">
-          <h2>20 Amino Acids?</h2>
-        </div>
-      </a>
-    </div>
-
-    <!--end of table content-->
-    <div class="spacer-20px"></div>
   </div>
-  <div class="spacer-10px"></div>
-  <div class="copyright">Copyright © 2022 Cody Nhan Pham.</br>All rights reserved.</div>
+  
+  
+  <div id="backgroundImageContainer">
+    <img id="backgroundImage" src="media/Sunsett.png">
+  </div>
 
 </body>
 
