@@ -1,5 +1,5 @@
 <div id="print-friendly">
-    <a href="/media/CodyPham_Resume2023.pdf">Print Friendly</a>
+    <a href="media/CodyPham_Resume2023.pdf">Print Friendly</a>
 </div>
 
 # CODY NHAN PHAM
