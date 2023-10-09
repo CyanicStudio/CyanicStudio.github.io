@@ -10,8 +10,8 @@ let targetState = { mousePosition: { x: 0, y: 0 }, waveIntensity: 0.005 };
 
 const ANIMATION_CONFIG = {
   transitionSpeed: 0.03,
-  baseIntensity: 0.009,
-  hoverIntensity: 0.004
+  baseIntensity: 0.01,
+  hoverIntensity: 0.005
 };
 
 // shaders
@@ -175,4 +175,32 @@ addEventListener("mousemove", (event) => {
         handleMouseOut();
         document.body.style.cursor = "none";
     }, 2500);
+});
+
+function toggleDesc() {
+    let descElement = document.getElementById("descriptionContainer");
+
+    if (descElement.classList.contains('hidden')) {
+        descElement.classList.remove('hidden');
+        setTimeout(function () {
+            descElement.classList.remove('visuallyhidden');
+        }, 100);
+    } else {
+        descElement.classList.add('visuallyhidden');    
+        descElement.addEventListener('transitionend', function(e) {
+        descElement.classList.add('hidden');
+        }, {
+            capture: false,
+            once: true,
+            passive: false
+        });
+    }
+}
+
+// on pressing Space, toggle description
+document.addEventListener('keydown', function(event) {
+    if(event.key === ' ') {
+        event.preventDefault();
+        toggleDesc();
+    }
 });

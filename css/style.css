@@ -94,6 +94,15 @@ h1 {
     user-select: none; /* Standard syntax */
 }
 
+.hidden {
+    display: none;
+}
+
+.visuallyhidden {
+    opacity: 0;
+    transition: ease-in-out 200ms;
+}
+
 .links {
     /* flex column */
     display: flex;
