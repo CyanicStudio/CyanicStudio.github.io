@@ -2,12 +2,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 
     background-color: #333333;
     font-family: 'K2D', sans-serif;
     color: rgba(255, 255, 255, 0.78);
+    scrollbar-gutter: stable both-edges;
 }
 
 /* Background */
@@ -17,7 +18,7 @@ canvas {
     transition: all ease 0.8s;
 }
 #backgroundImageContainer {
-    position: relative;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -58,8 +59,10 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    padding-top: calc(2vh + 2vw);
+    
+    min-height: calc(100vh - 5vh - 5vw);
+
 
     /* vertical gap */
     gap: 4vh;
@@ -112,6 +115,8 @@ h1 {
     width: 70vw;
     max-width: 800px;
 
+    padding-bottom: calc(3vh + 3vw);
+
     /* vertical gap */
     gap: min(1.3rem, min(1.3vw, 1.3vh));
 }
@@ -123,10 +128,11 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    width: 100%;
     height: fit-content;
     padding: 0.8rem;
     border-radius: 3rem;
+
+    width: 100%;
 
     /* background */
     background-color: rgba(255, 255, 255, 0.1);
@@ -343,7 +349,7 @@ a {
         /* links to flex row */
         .links {
             flex-direction: row;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 1.5rem;
@@ -357,6 +363,7 @@ a {
         .links a {
             background-color: transparent;
             padding: 0;
+            width: auto;
         }
     
         /* disable all hover color */
@@ -387,7 +394,6 @@ a {
             max-width: min(16vw, 16vh);
             max-height: min(16vw, 16vh);
         }
-
     }
 }
 
