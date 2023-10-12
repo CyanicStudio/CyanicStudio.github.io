@@ -1,4 +1,4 @@
-<!-- Generated on 2023-10-12, 07:20:52 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
+<!-- Generated on 2023-10-12, 08:56:08 --><!DOCTYPE html><html lang="en" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head>
     <!-- Google tag (gtag.js) -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BFS77G1W4V"></script>
     <script>
@@ -35,6 +35,19 @@
     <link rel="canonical" href="https://codynhanpham.com/blogs/iwannaburymypastself/if-care-equals-infinity/">
     <link rel="icon" href="https://raw.githubusercontent.com/codynhanpham/codynhanpham.github.io/main/media/web128.png">
 
+    <script defer="">
+        function progressBarScroll() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+            height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+            scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+        }
+
+        window.onscroll = function () {
+        progressBarScroll();
+        };
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></link>
@@ -48,7 +61,7 @@ body {
     margin: calc(3.5 * var(--font-size)) 16vw;
     background-color: #1a1a1a;
     font-family: 'K2D', sans-serif;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgb(205,205,205);
     scrollbar-gutter: stable both-edges;
 
     font-size: var(--font-size);
@@ -61,20 +74,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgb(106,106,106);
     border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgb(152,152,152);
 }
 
 ::-webkit-scrollbar-corner {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(49,49,49);
 }
 
 code {
@@ -115,10 +128,32 @@ a:hover:after {
 }
 
 h1 {
-    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgb(95,95,95);
     padding-bottom: 1rem;
 
     font-size: calc(2.2 * var(--font-size));
+}
+
+/* Progress bar */
+.progress-header {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.progress-container {
+    background-color: rgb(49,49,49,0.5);
+    height: 4px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: rgba(154, 175, 214,0.9);
+    height: 4px;
+    width: 0%;
+    border-radius: 4px;
 }
 
 
@@ -151,6 +186,11 @@ h1 {
     text-indent: calc(3.3 * var(--font-size));
 }</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{color:#abb2bf;background:#26292e}.hljs-comment,.hljs-quote{color:#5c6370;font-style:italic}.hljs-doctag,.hljs-formula,.hljs-keyword{color:#c678dd}.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#e06c75}.hljs-literal{color:#56b6c2}.hljs-addition,.hljs-attribute,.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#98c379}.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#d19a66}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#61aeee}.hljs-built_in,.hljs-class .hljs-title,.hljs-title.class_{color:#e6c07b}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-link{text-decoration:underline}</style></head>
 <body>
+    <div class="progress-header">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
     <div class="small-text" id="info">
 <span>Cody N. Pham</span>
 <br>
