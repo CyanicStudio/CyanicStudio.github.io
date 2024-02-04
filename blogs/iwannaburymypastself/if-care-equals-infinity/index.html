@@ -37,15 +37,15 @@
 
     <script defer="">
         function progressBarScroll() {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
-            height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
-            scrolled = (winScroll / height) * 100;
-        document.getElementById("progressBar").style.width = scrolled + "%";
+            let height = document.documentElement.scrollHeight - window.innerHeight,
+                winScroll = window.pageYOffset,
+                scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
         }
 
-        window.onscroll = function () {
-        progressBarScroll();
-        };
+        window.addEventListener('scroll', progressBarScroll);
+        window.addEventListener('resize', progressBarScroll);
+        window.addEventListener('load', progressBarScroll);
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
